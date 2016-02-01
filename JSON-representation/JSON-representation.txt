@@ -129,7 +129,7 @@ Now, the `Math` (`Inline`) constructor has math type and string arguments:
     > :info Math
     data Inline = ... | Math MathType String | ...
 
-Therefor, it is converted as:
+Therefore, it is converted as:
 
     > js (Math InlineMath "a=1")
     {"t":"Math","c":[{"t":"InlineMath","c":[]},"a=1"]}
