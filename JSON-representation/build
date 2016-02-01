@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+pandoc -t html5 -V lang=en --section-divs --template=template/template.html5  \
+       --smart --email-obfuscation=none JSON-representation.txt \
+       > unstyled.html
+css --style=css/style.css unstyled.html > index.html
+rm unstyled.html
+
+pandoc --template=template/template.latex -o JSON-representation.pdf \
+       JSON-representation.txt
+

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+ssh boisgera@ker.bzh "mkdir -p /www/pandoc"
+ssh boisgera@ker.bzh "mkdir -p /www/pandoc/JSON-representation"
+ssh boisgera@ker.bzh "mkdir -p /www/pandoc/JSON-representation/css"
+scp -p index.html ker.bzh:/www/pandoc/JSON-representation/index.html
+scp -p css/style.css ker.bzh:/www/pandoc/JSON-representation/css/style.css
+scp -p JSON-representation.txt ker.bzh:/www/pandoc/JSON-representation/index.txt
+scp -p JSON-representation.pdf ker.bzh:/www/pandoc/JSON-representation/index.pdf
+
