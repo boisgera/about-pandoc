@@ -1,6 +1,6 @@
 % Pandoc -- Document Structure
 % [Sébastien Boisgérault](mailto:Sebastien.Boisgerault@mines-paristech.fr)
-% January 31, 2016
+% February 14, 2016
 ---
 license: "[CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/)"
 ---
@@ -29,7 +29,7 @@ Actually, this is not that hard:
 you only need is an elementary introduction to the Haskell type system, 
 with examples taken from pandoc, and this is what we are doing next.
 
-[Text.Pandoc.Definition]: http://hackage.haskell.org/package/pandoc-types-1.16.0.1/docs/Text-Pandoc-Definition.html
+[Text.Pandoc.Definition]: http://hackage.haskell.org/package/pandoc-types-1.16.1/docs/Text-Pandoc-Definition.html
 [Haskell]: https://www.haskell.org
 [Hackage]: http://hackage.haskell.org
 
@@ -265,8 +265,7 @@ The output of this command sequence, slightly reformated to enhance readability:
       | AlignCenter 
       | AlignDefault
 
-    type Attr 
-      = (String, [String], [(String, String)])
+    type Attr = (String, [String], [(String, String)])
 
     data Block
       = Plain [Inline]
@@ -296,8 +295,7 @@ The output of this command sequence, slightly reformated to enhance readability:
       | SuppressAuthor 
       | NormalCitation
 
-    newtype Format 
-      = Format String
+    newtype Format = Format String
 
     data Inline
       = Str String
@@ -311,16 +309,16 @@ The output of this command sequence, slightly reformated to enhance readability:
       | Cite [Citation] [Inline]
       | Code Attr String
       | Space
+      | SoftBreak
       | LineBreak
       | Math MathType String
       | RawInline Format String
-      | Link [Inline] Target
-      | Image [Inline] Target
+      | Link Attr [Inline] Target
+      | Image Attr [Inline] Target
       | Note [Block]
       | Span Attr [Inline]
 
-    type ListAttributes 
-      = (Int, ListNumberStyle, ListNumberDelim)
+    type ListAttributes = (Int, ListNumberStyle, ListNumberDelim)
 
     data ListNumberDelim 
       = DefaultDelim 
@@ -337,12 +335,11 @@ The output of this command sequence, slightly reformated to enhance readability:
       | LowerAlpha
       | UpperAlpha
 
-    data MathType
+    data MathType 
       = DisplayMath 
       | InlineMath
 
-    newtype Meta
-      = Meta {unMeta :: Map String MetaValue}
+    newtype Meta = Meta {unMeta :: Map String MetaValue}
 
     data MetaValue
       = MetaMap (Map String MetaValue)
@@ -352,22 +349,15 @@ The output of this command sequence, slightly reformated to enhance readability:
       | MetaInlines [Inline]
       | MetaBlocks [Block]
 
-    data Pandoc 
-      = Pandoc Meta [Block]
+    data Pandoc = Pandoc Meta [Block]
 
     data QuoteType 
       = SingleQuote 
       | DoubleQuote
 
-    type TableCell 
-      = [Block]
+    type TableCell = [Block]
 
-    type Target 
-      = (String, String)
-
-    ...
+    type Target = (String, String)
 
 Function declarations have been omitted.
-
-
 

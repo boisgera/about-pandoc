@@ -5,6 +5,6 @@ ssh boisgera@ker.bzh "mkdir -p /www/pandoc/document-structure"
 ssh boisgera@ker.bzh "mkdir -p /www/pandoc/document-structure/css"
 scp -p index.html ker.bzh:/www/pandoc/document-structure/index.html
 scp -p css/style.css ker.bzh:/www/pandoc/document-structure/css/style.css
-scp -p document-structure.txt ker.bzh:/www/pandoc/document-structure/document-structure.txt
-scp -p document-structure.pdf ker.bzh:/www/pandoc/document-structure/document-structure.pdf
+scp -p document-structure.txt ker.bzh:/www/pandoc/document-structure/index.txt
+scp -p document-structure.pdf ker.bzh:/www/pandoc/document-structure/index.pdf
 
