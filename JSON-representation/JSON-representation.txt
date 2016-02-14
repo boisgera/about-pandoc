@@ -1,6 +1,9 @@
 % Pandoc -- JSON Representation
-% [Sébastien Boisgérault](mailto:Sebastien.Boisgerault@mines-paristech.fr)
-% February 1, 2016
+% [Sébastien Boisgérault][email], Mines ParisTech
+% February 14, 2016
+
+[email]: mailto:Sebastien.Boisgerault@mines-paristech.fr
+
 ---
 license: "[CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/)"
 ---

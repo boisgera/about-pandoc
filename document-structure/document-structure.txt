@@ -1,6 +1,9 @@
 % Pandoc -- Document Structure
-% [Sébastien Boisgérault](mailto:Sebastien.Boisgerault@mines-paristech.fr)
+% [Sébastien Boisgérault][email], Mines ParisTech
 % February 14, 2016
+
+[email]: mailto:Sebastien.Boisgerault@mines-paristech.fr
+
 ---
 license: "[CC-BY-4.0](http://creativecommons.org/licenses/by/4.0/)"
 ---
