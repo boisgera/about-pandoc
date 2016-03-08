@@ -19,7 +19,7 @@ a newbie.
 And I know that I am not alone!
 
 To lower the barrier to this incredibly useful technology, 
-I am creating a pandoc library for [Python]. 
+I am developing a pandoc library for [Python]. 
 I am also documenting the interesting bits of knowledge 
 that I learn along the way.
 
