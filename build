@@ -1,0 +1,25 @@
+#!/bin/bash
+set -euo pipefail
+
+DOC="index"
+TXT="$DOC.txt"
+JSON="$DOC.json"
+HTML="$DOC.html"
+
+TYPO="--smart"
+
+JSON_OPT=""
+HTML_OPT="-V lang=en --section-divs --mathjax --email-obfuscation=none \
+         --template=templates/template.html5"
+# TODO: lang should be shared, but babel doesn't find the 'en' def file so far.
+
+rm -rf templates && cp -r /usr/share/pandoc-templates templates
+
+echo "generate html"
+pandoc -t json $JSON_OPT $TYPO "$TXT" > "$JSON"
+cat "$JSON" | eul-doc > "_$JSON"
+pandoc -f json -t html5 $HTML_OPT "_$JSON" > "_$HTML"
+rm "$JSON" "_$JSON"
+mkdir -p css && eul-style "_$HTML" > "$HTML"
+rm "_$HTML"
+

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+DOC="index"
+eDOC="index"
+TARGET="/www/pandoc"
+EUL=www.eul.ink
+
+ssh boisgera@$EUL mkdir -p "$TARGET"
+scp -p "$DOC".html $EUL:"$TARGET"/"$eDOC.html"
+scp -rp icons $EUL:$TARGET
+
+
+
+
+

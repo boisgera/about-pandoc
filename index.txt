@@ -1,0 +1,77 @@
+---
+title: About Pandoc
+author:  
+-  "[Sébastien Boisgérault](mailto:Sebastien.Boisgerault@mines-paristech.fr),
+   Mines ParisTech"
+---
+
+[Pandoc] is a the "universal document converter" made by [John MacFarlane]:
+
+  - a (command-line) tool to convert from one format into another,
+
+  - a (Haskell) library, used to analyze, create, transform documents,
+
+  - a document (meta-)model: a formal specification of what a document *is*.
+
+I am a huge fan of pandoc and use it for pretty much everything I write.
+I am also a big fan of the [Haskell] programming language but I am still 
+a newbie. 
+I know that I am not alone!
+
+To lower the barrier to this incredibly useful technology, 
+I am creating a pandoc library for [Python] and documenting 
+the interesting bits of knowledge that I learn along the way.
+
+[Pandoc]: http://pandoc.org/
+[John MacFarlane]: http://johnmacfarlane.net/
+[Haskell]: https://www.haskell.org/
+[Python]: https://www.python.org/
+
+
+Articles
+================================================================================
+
+**[Document Structure]**
+<div style="float:right;overflow:hidden;">
+[<i class="fa fa-html5"></i>][Document Structure]
+/
+[<i class="fa fa-file-pdf-o"></i>](document-structure/index.pdf)
+</div>
+
+[Document Structure]: document-structure
+
+-----
+
+**[JSON Representation]**
+<div style="float:right;overflow:hidden;">
+[<i class="fa fa-html5"></i>][JSON Representation]
+/
+[<i class="fa fa-file-pdf-o"></i>](JSON-representation/index.pdf)
+</div>
+
+[JSON Representation]: JSON-representation
+
+-----
+
+**A Pythonic API** *(coming soon)*
+<div style="color:#d3d3d3;float:right;overflow:hidden;">
+<i class="fa fa-html5"></i>
+/
+<i class="fa fa-file-pdf-o"></i>
+</div>
+
+
+Software (Alpha)
+================================================================================
+
+**Pandoc (Python Library)**
+<div style="float:right;overflow:hidden;">
+[<i class="fa fa-github"></i>](https://github.com/boisgera/pandoc)
+/
+<a href="https://pypi.python.org/pypi/pandoc/">
+<img src="icons/python.svg" style="width:1em;display:inline;vertical-align:-10%"></img>
+</a>
+</div>
+
+[Python pandoc]: https://pypi.python.org/pypi/pandoc/
+
