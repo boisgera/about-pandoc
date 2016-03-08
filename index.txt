@@ -65,14 +65,14 @@ Articles
 Software (Alpha)
 ================================================================================
 
-**Pandoc (Python Library)**
+**[Pandoc (Python Library)]**
 <div style="float:right;overflow:hidden;">
-[<i class="fa fa-github"></i>](https://github.com/boisgera/pandoc)
+[<i class="fa fa-github"></i>][Pandoc (Python Library)]
 /
 <a href="https://pypi.python.org/pypi/pandoc/">
 <img src="icons/python.svg" style="width:1em;display:inline;vertical-align:-10%"></img>
 </a>
 </div>
 
-[Python pandoc]: https://pypi.python.org/pypi/pandoc/
+[Pandoc (Python Library)]: https://github.com/boisgera/pandoc
 
