@@ -337,5 +337,3 @@ Version 1.19
 
 No change with respect to 1.17!
 
-
-
