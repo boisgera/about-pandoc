@@ -164,7 +164,7 @@ Concretely, the format is either "tex" or "html"
 but this is a not a hard constraint of the document model.
 
 
-Version 1.9
+Versions 1.9.0.1 to 1.9.1
 --------------------------------------------------------------------------------
 
 ### Removal of em-dash, en-dash, apostrophe and ellipses
@@ -176,5 +176,16 @@ as regular string (`Str`) instances, which makes sense:
 since the unicode standard knows about them,
 it is pointless to have an extra construct.
 
+
+Version 1.12
+--------------------------------------------------------------------------------
+
+### A new metadata model
+
+### Introduction of div and span
+
+### Headers get attributes
+
+### `Format` becomes a `newtype`
 
 
