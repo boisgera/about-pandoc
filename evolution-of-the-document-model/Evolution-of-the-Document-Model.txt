@@ -103,7 +103,7 @@ The original model, included below for the sake of completeness:
                   citationHash :: Int}
     data CitationMode = AuthorInText | SuppressAuthor | NormalCitation
 
-Version 1.8
+Versions 1.8 to 1.8.2
 --------------------------------------------------------------------------------
 
 ### Inline code gets attributes
@@ -140,7 +140,7 @@ For example, the markdown text
 attaches the class `haskell` to the inline code `<$>`.
 
 
-### Raw Elements
+### Raw elements
 
 In the 1.7 model, HTML fragments could be inserted in documents
 as `RawHtml` blocks or `HtmlInline` inlines; TeX fragments could
@@ -162,4 +162,19 @@ blocks or raw inlines:
 
 Concretely, the format is either "tex" or "html" 
 but this is a not a hard constraint of the document model.
+
+
+Version 1.9
+--------------------------------------------------------------------------------
+
+### Removal of em-dash, en-dash, apostrophe and ellipses
+
+`EmDash`, `EnDash`, `Apostrophe` and `Ellipses` disappear 
+from the `Inline` type. You can still use the corresponding 
+constructs in you markdown text, but they will be described
+as regular string (`Str`) instances, which makes sense: 
+since the unicode standard knows about them,
+it is pointless to have an extra construct.
+
+
 
