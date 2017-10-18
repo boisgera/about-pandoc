@@ -104,7 +104,8 @@ The original model, included below for the sake of completeness:
                   citationHash :: Int}
     data CitationMode = AuthorInText | SuppressAuthor | NormalCitation
 
-Versions 1.8 to 1.8.2
+
+Version 1.8
 --------------------------------------------------------------------------------
 
 ### Inline code gets attributes
@@ -168,8 +169,10 @@ Concretely, the format is either "tex" or "html"
 but this is a not a hard constraint of the document model.
 
 
-Versions 1.9.0.1 to 1.9.1
+Version 1.9(.0.1)
 --------------------------------------------------------------------------------
+
+(there is no version 1.9 released, only 1.9.0.1, 1.9.0.2 and 1.9.1)
 
 ### New representation for em-dash, en-dash, apostrophe and ellipses
 
@@ -181,7 +184,7 @@ since the unicode standard knows about them,
 it is pointless to have an extra construct.
 
 
-Versions 1.12 to 1.12.4.5
+Version 1.12
 --------------------------------------------------------------------------------
 
 ### A new metadata model
@@ -307,5 +310,32 @@ The new model is:
       | Link Attr [Inline] Target
       | Image Attr [Inline] Target
       | ...
+
+### Pandoc-types gets a version tag [1.16.1.1] 
+ 
+    PandocTypesVersion :: Version
+
+
+Version 1.17
+--------------------------------------------------------------------------------
+
+### Line blocks
+
+A structure that preserves line breaks and leading spaces
+(refer to the [user manual][Line blocks] for details):
+
+    data Block
+      = ...
+      | LineBlock [[Inline]]
+      | ...
+
+[Line blocks]: https://pandoc.org/MANUAL.html#line-blocks
+
+
+Version 1.19
+--------------------------------------------------------------------------------
+
+No change with respect to 1.17!
+
 
 
