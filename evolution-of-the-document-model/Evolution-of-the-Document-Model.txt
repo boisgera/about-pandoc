@@ -10,7 +10,16 @@ license: "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0)"
 Introduction
 --------------------------------------------------------------------------------
 
-The `Text.Pandoc.Definition` is the module of the [pandoc-types] Haskell package that contains the definitions fof the Pandoc data structure, 
+The `Text.Pandoc.Definition` is the module of the [pandoc-types] Haskell package that contains the definitions for the Pandoc data structure, 
 used by pandoc to represent structured documents.
 
+Actually, there is not a single model of document, 
+but a collection of models since the original design has evolved over time.
+We describe here the evolution of this model, 
+from the creation of pandoc-types to the present day.
+
 [pandoc-types]: https://hackage.haskell.org/package/pandoc-types
+
+
+Evolutions
+--------------------------------------------------------------------------------
