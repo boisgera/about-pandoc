@@ -1,0 +1,16 @@
+% Evolution of the Document Model
+% [Sébastien Boisgérault][email], MINES ParisTech
+
+[email]: mailto:Sebastien.Boisgerault@mines-paristech.fr
+
+---
+license: "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0)"
+---
+
+Introduction
+--------------------------------------------------------------------------------
+
+The `Text.Pandoc.Definitiion` is the module of the  [pandoc-types] Haskell package that contains the definitions fof the Pandoc data structure, used
+by pandoc to represent structured documents.
+
+[pandoc-types]: https://hackage.haskell.org/package/pandoc-types

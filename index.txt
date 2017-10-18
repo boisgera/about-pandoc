@@ -1,9 +1,36 @@
 ---
-title: About Pandoc
+title: Pandoc (Python Library)
 author:  
 -  "[Sébastien Boisgérault](mailto:Sebastien.Boisgerault@mines-paristech.fr),
    Mines ParisTech"
 ---
+
+Software
+================================================================================
+
+**[Pandoc (Python Library)]**
+<div style="float:right;overflow:hidden;">
+[<i class="fa fa-github"></i>][Pandoc (Python Library)]
+/
+<a href="https://pypi.python.org/pypi/pandoc/">
+<img src="icons/python.svg" style="width:1em;display:inline;vertical-align:-10%"></img>
+</a>
+</div>
+
+[Pandoc (Python Library)]: https://github.com/boisgera/pandoc
+
+This library is still in pre-release; if you want to try it anyway:
+
+    $ pip install --user --pre --upgrade pandoc
+
+
+About Pandoc
+================================================================================
+
+**[Pandoc]**
+<div style="float:right;overflow:hidden;">
+[<i class="fa fa-link"></i>][Pandoc]
+</div>
 
 [Pandoc] is the "document swiss army knife" made by [John MacFarlane]:
 
@@ -15,13 +42,10 @@ author:
 
 I am a huge fan of pandoc and use it for pretty much everything I write.
 I am also a big fan of the [Haskell] programming language but I am still 
-a newbie. 
-And I know that I am not alone!
-
-To lower the barrier to this incredibly useful technology, 
-I am developing a pandoc library for [Python]. 
-I am also documenting the interesting bits of knowledge 
-that I learn along the way.
+a newbie... and I am probably not alone!
+Therefore, to facilitate access to [pandoc], 
+I am working on a [Python library][Pandoc (Python Library)] 
+and [documenting this process][Articles].
 
 [Pandoc]: http://pandoc.org/
 [John MacFarlane]: http://johnmacfarlane.net/
@@ -43,6 +67,15 @@ Articles
 
 -----
 
+**[Evolution of the Document Model](Evolution-of-the-Document-Model)**
+<div style="float:right;overflow:hidden;">
+[<i class="fa fa-html5"></i>](Evolution-of-the-Document-Model)
+/
+[<i class="fa fa-file-pdf-o"></i>](Evolution-of-the-Document-Model/(Evolution-of-the-Document-Model).pdf)
+</div>
+
+-----
+
 **[JSON Representation]**
 <div style="float:right;overflow:hidden;">
 [<i class="fa fa-html5"></i>][JSON Representation]
@@ -54,25 +87,9 @@ Articles
 
 -----
 
-**A Pythonic API** *(coming soon)*
-<div style="color:#d3d3d3;float:right;overflow:hidden;">
-<i class="fa fa-html5"></i>
-/
-<i class="fa fa-file-pdf-o"></i>
-</div>
-
-
-Software (Alpha)
-================================================================================
-
-**[Pandoc (Python Library)]**
+**A Pythonic API**
 <div style="float:right;overflow:hidden;">
-[<i class="fa fa-github"></i>][Pandoc (Python Library)]
-/
-<a href="https://pypi.python.org/pypi/pandoc/">
-<img src="icons/python.svg" style="width:1em;display:inline;vertical-align:-10%"></img>
-</a>
+*coming soon*
 </div>
 
-[Pandoc (Python Library)]: https://github.com/boisgera/pandoc
 
