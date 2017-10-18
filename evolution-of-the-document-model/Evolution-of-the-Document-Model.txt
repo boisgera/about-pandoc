@@ -10,7 +10,8 @@ license: "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0)"
 Introduction
 ================================================================================
 
-The `Text.Pandoc.Definition` is the module of the [pandoc-types] Haskell package that contains the definitions for the Pandoc data structure, 
+`Text.Pandoc.Definition` is the module of the [pandoc-types] Haskell package
+that contains the definitions for the Pandoc data structure 
 used by pandoc to represent structured documents.
 
 Actually, there is not a single model of document, 
@@ -138,7 +139,10 @@ For example, the markdown text
     `<$>`{.haskell}
 
 attaches the class `haskell` to the inline code `<$>`.
+A `nullAttr` constant is also introduced to denote the default
+value of the attributes field
 
+    nullAttr :: Attr
 
 ### Raw elements
 
@@ -177,15 +181,131 @@ since the unicode standard knows about them,
 it is pointless to have an extra construct.
 
 
-Version 1.12
+Versions 1.12 to 1.12.4.5
 --------------------------------------------------------------------------------
 
 ### A new metadata model
 
-### Introduction of div and span
+In the initial document model, the metadata of a document 
+was made of three fixed attributes, specified in a [title block]:
+the document title, author list and date.
+
+    data Meta
+      = Meta {docTitle :: [Inline],
+              docAuthors :: [[Inline]],
+              docDate :: [Inline]}
+
+A typical markdown document would start with 
+lines prefixed by percentages to specify these attributes,
+such as
+
+     % Document Title
+     % Author 1; Author 2; Author 3
+     % Date
+
+Starting with 1.12, pandoc support arbitrary [YAML metadata blocks]
+
+    newtype Meta = Meta {unMeta :: Map String MetaValue}
+    data MetaValue
+      = MetaMap (Map String MetaValue)
+      | MetaList [MetaValue]
+      | MetaBool Bool
+      | MetaString String
+      | MetaInlines [Inline]
+      | MetaBlocks [Block]
+
+Helper functions are created to help with the new structure,
+for example to get the title, authors and date.
+
+    nullMeta :: Meta
+    isNullMeta :: Meta -> Bool
+    lookupMeta :: String -> Meta -> Maybe MetaValue
+    docTitle :: Meta -> [Inline]
+    docAuthors :: Meta -> [[Inline]]
+    docDate :: Meta -> [Inline]
+
+[title block]: https://pandoc.org/MANUAL.html#extension-pandoc_title_block
+
+[YAML metadata blocks]: https://pandoc.org/MANUAL.html#extension-yaml_metadata_block
+
+
+### Introduction of span and div
+
+The span and div constructs from HTML are incorporated to the document
+model, as inline and block elements respectively:
+
+    data Inline
+      = ...
+      | Span Attr [Inline]
+      | ...
+
+    data Block
+      = ...
+      | Div Attr [Block]
+      | ...
+
+
+Their markdown syntax is the classic HTML one.
+
 
 ### Headers get attributes
 
+Instead of 
+
+    data Block
+      = ...
+      | Header Int [Inline]
+      | ...
+
+we now get
+
+    data Block
+      = ...
+      | Header Int Attr [Inline]
+      | ...
+
+
 ### `Format` becomes a `newtype`
+
+A technical change to improve the type safety of the data model:
+`Format` was a simple synonym for `String`
+
+    type Format = String
+
+It becomes a distinct type whose content is still a string:
+
+    newtype Format = Format String
+
+
+Version 1.16
+--------------------------------------------------------------------------------
+
+### Soft breaks
+
+When pandoc reads markdown files, only explicit line breaks --
+specified with either `\` or two spaces at the end of the line --
+are registered -- as `LineBreak` elements -- and thus may be 
+preserved in output documents.
+
+With soft breaks, introduced in the 1.16 document model, 
+the input to output behavior remains the same by default,
+but the weaker variants of line breaks, only specified by
+a new line are now registered; to make them apear in your 
+output document, you can use the option `--wrap=preserve`.
+
+    data Inline
+      = ...
+      | SoftBreak
+      | ...
+
+### Links and images get attributes
+
+The new model is:
+
+    data Inline
+      = ...
+      | Link Attr [Inline] Target
+      | Image Attr [Inline] Target
+      | ...
 
 
