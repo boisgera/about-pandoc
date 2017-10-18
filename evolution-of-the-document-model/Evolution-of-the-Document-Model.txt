@@ -167,7 +167,7 @@ but this is a not a hard constraint of the document model.
 Versions 1.9.0.1 to 1.9.1
 --------------------------------------------------------------------------------
 
-### Removal of em-dash, en-dash, apostrophe and ellipses
+### New representation for em-dash, en-dash, apostrophe and ellipses
 
 `EmDash`, `EnDash`, `Apostrophe` and `Ellipses` disappear 
 from the `Inline` type. You can still use the corresponding 
