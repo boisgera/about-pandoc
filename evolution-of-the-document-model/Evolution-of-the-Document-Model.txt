@@ -311,10 +311,6 @@ The new model is:
       | Image Attr [Inline] Target
       | ...
 
-### Pandoc-types gets a version tag [1.16.1.1] 
- 
-    PandocTypesVersion :: Version
-
 
 Version 1.17
 --------------------------------------------------------------------------------
@@ -335,5 +331,17 @@ A structure that preserves line breaks and leading spaces
 Version 1.19
 --------------------------------------------------------------------------------
 
-No change with respect to 1.17!
+No change with respect to 1.17.
+
+
+Version 2.0
+--------------------------------------------------------------------------------
+
+No change with respect to 1.19.
+
+
+Version 2.1
+--------------------------------------------------------------------------------
+
+No change with respect to 2.0.
 
